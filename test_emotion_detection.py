@@ -1,9 +1,21 @@
-from emotion_detection import emotion_detector
+from .emotion_detection import emotion_detector
 
 
-def test_emotion_detector():
+def test_joy():
     assert emotion_detector("I am glad this happened")["dominant_emotion"] == "joy"
+
+
+def test_anger():
     assert emotion_detector("I am really mad about this")["dominant_emotion"] == "anger"
+
+
+def test_disgust():
     assert emotion_detector("I feel disgusted just hearing about this")["dominant_emotion"] == "disgust"
+
+
+def test_fear():
     assert emotion_detector("I am so frightened that I could not move")["dominant_emotion"] == "fear"
+
+
+def test_sadness():
     assert emotion_detector("I am so sad about this")["dominant_emotion"] == "sadness"
